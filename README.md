@@ -1,5 +1,9 @@
 # Template for RStudio on Binder / JupyterHub
 
+<!-- badges: start -->
+[![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/senanu/b40r/master?urlpath=rstudio)
+<!-- badges: end -->
+
 [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/senanu/b40r/master?urlpath=rstudio)
 
 Generate a Git repository that can run R code with RStudio on
