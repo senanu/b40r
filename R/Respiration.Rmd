@@ -48,6 +48,7 @@ C45.dry.net <- dat$C45.dry - dat$C45.emp
 # Linear regression
 
 We aren't really interested in the minute-by-minute changes that happen in the respirometers, but rather the overall change. So, we'll do a regression analysis for each one of the 'test' chambers (technically, the 'net' volume changes).
+
 1. Use the `lm()` function ("linear model") to get a regression line for each set of tubes. Remember that the tilde (a~b) means "a is explained by b".
 2. Repeat this for the other tube sets.
 3. When this code block runs, change `eval=FALSE` to `eval=TRUE`.
@@ -66,7 +67,7 @@ C45.reg <- lm(C45.net ~ dat$Time)
 C45.dry.reg <- lm(C45.dry.net ~ dat$Time)
 ```
 
-```{r plot, include=TRUE, echo=FALSE, eval=TRUE}
+```{r plot, include=TRUE, echo=FALSE, eval=FALSE}
 plot(dat$Time, C20.net, type='n', ylim=c(0, 1))
 abline(C0.reg, col='red', lw=3)
 abline(C20.reg, col='blue', lw=3)
