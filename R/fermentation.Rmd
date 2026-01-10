@@ -42,9 +42,9 @@ You will enter your data into a Google spreadsheet in a 'long' format. In 'long'
 
 ```{r get-data, eval=TRUE, echo=FALSE}
 ## Use the top row here to use some made-up data.
-## Use the bottom row for your own read data.
-#dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=1495812031&single=true&output=csv")
-dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=32807751&single=true&output=csv")
+## Use the bottom row for your own real data.
+dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=1495812031&single=true&output=csv")
+#dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=32807751&single=true&output=csv")
 ```
 
 ## Plot all data
