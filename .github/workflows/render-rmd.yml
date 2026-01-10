@@ -24,7 +24,7 @@ jobs:
 
       - name: Install R package dependencies
         run: |
-          R -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); pkgs <- c("rmarkdown","knitr"); new <- pkgs[!(pkgs %in% installed.packages()[,"Package"])]; if(length(new)) install.packages(new)'
+          R -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); pkgs <- c("rmarkdown","knitr","ggplot2"); new <- pkgs[!(pkgs %in% installed.packages()[,"Package"])]; if(length(new)) install.packages(new)'
 
       - name: Render all Rmd files to HTML
         run: |
