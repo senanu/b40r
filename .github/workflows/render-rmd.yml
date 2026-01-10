@@ -28,7 +28,7 @@ jobs:
 
       - name: Render all Rmd files to HTML
         run: |
-          R -e 'rmds <- list.files(pattern = "R/\\.Rmd$", recursive = FALSE); print(rmds); if(length(rmds) == 0) { message("No Rmd files found") } else { for (f in rmds) rmarkdown::render(f, output_format = "html_document", quiet = TRUE) }'
+          R -e 'rmds <- Sys.glob("R/*.Rmd"); print(rmds); if(length(rmds) == 0) { message("No Rmd files found") } else { for (f in rmds) rmarkdown::render(f, output_format = "html_document", quiet = TRUE) }'
 
       - name: Commit HTML files
         run: |
