@@ -37,4 +37,6 @@ jobs:
           git add R/*.html
           git commit -m "Automatic rebuild of HTML files" || echo "No changes to commit"
           git push origin || echo "No changes to commit and push"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
