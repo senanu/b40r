@@ -103,7 +103,9 @@ head(mtcars)
 
 You can also see the dataset in the "Workspace and History" panel (top right panel) under 'Environment'. Try double-clicking the name of the dataset to see it in tabular form. You should see rows labeled for the type of car, and then characteristics of the car as a number of columns.
 
-You specify which column you want using the dollar sign (`$`). ![First rows of mtcars dataset](https://senanu.github.io/b40/assets/labs/02_cars.png) We can use this dollar sign notation to isolate one column of data. For example, to calculate the mean (average) fuel economy for these cars, you can do:
+You specify which column you want using the dollar sign (`$`). ![First rows of mtcars dataset](https://senanu.github.io/b40/assets/labs/02_cars.png) 
+
+We can use this dollar sign notation to isolate one column of data. For example, to calculate the mean (average) fuel economy for these cars, you can do:
 
 ```{r mpg, echo=TRUE, eval=TRUE}
 mtcars$mpg # show only the 'mpg' (miles per gallon) column
