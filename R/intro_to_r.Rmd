@@ -15,10 +15,7 @@ Please read this document completely, and follow along in RStudio or Posit Cloud
 
 As you have already learned in a previous exercise, this is an R Markdown document, which mixes text with code. To start out, you should 'knit' the document before making any changes. It will be easier to read, with nice formatting.
 
-You can read this document in 3 different ways, depending on how you like it.
-1. View it as plain "Source" text. You will see all the formatting codes (which might be distracting and 'ugly' and numbering may seem wrong) but this is the rawest form, and how the document is actually written. Above and to the right of the code editor pane (top left pane), click the "source" button.
-1. View it in the visual editor to make the formatting nice and avoid seeing all the formatting code. **This is how I recommend you read the document**. Click the "visual" button to the top left of the top left (code editor) pane.
-1. Knit the document and read the HTML. This is the final form of the document but some things that you'll need get hidden in this form, so I don't recommend it. You can view it either in a separate window or in the "Plots and files" pane (lower right).
+You can read this document in 3 different ways, depending on how you like it. 1. View it as plain "Source" text. You will see all the formatting codes (which might be distracting and 'ugly' and numbering may seem wrong) but this is the rawest form, and how the document is actually written. Above and to the right of the code editor pane (top left pane), click the "source" button. 1. View it in the visual editor to make the formatting nice and avoid seeing all the formatting code. **This is how I recommend you read the document**. Click the "visual" button to the top left of the top left (code editor) pane. 1. Knit the document and read the HTML. This is the final form of the document but some things that you'll need get hidden in this form, so I don't recommend it. You can view it either in a separate window or in the "Plots and files" pane (lower right).
 
 Try viewing the document in each of these forms to see what you like.
 
@@ -40,7 +37,7 @@ If you want to run a single command without recording it into your script, you c
 
 You can do a lot with `R` but for now, we need to understand a few basics.
 
-Try to think of `R` like a language. In any language, there are __nouns__ and __verbs__. Nouns can take the form of a single value such as the number `r 10`. We can use verbs to operate on those nouns, such as the plus sign in $10 + 5 = `r 10 + 5`$. Try typing '$10 + 5$' into the code chunk below. Run it. You should see that R returns the answer.
+Try to think of `R` like a language. In any language, there are **nouns** and **verbs**. Nouns can take the form of a single value such as the number `r 10`. We can use verbs to operate on those nouns, such as the plus sign in $10 + 5 = `r 10 + 5`$. Try typing '$10 + 5$' into the code chunk below. Run it. You should see that R returns the answer.
 
 ```{r ten_plus_five, echo=TRUE, eval=TRUE}
 # Put your code (10 + 5) below this line. Don't include parentheses. Then, run the line with 'cntrl-enter' or by clicking the green arrow at the top right of this code chunk.
@@ -49,13 +46,13 @@ Try to think of `R` like a language. In any language, there are __nouns__ and __
 
 ## Variables with a single value
 
-In order to make R more than a glorified calculator, we will save values into named __variables__. To do so, we will use the __assignment operator (<-)__. This operator (a verb) assigns the value on the right into the variable on the left. So, when you ran the command
+In order to make R more than a glorified calculator, we will save values into named **variables**. To do so, we will use the **assignment operator (\<-)**. This operator (a verb) assigns the value on the right into the variable on the left. So, when you ran the command
 
 ```{r assigment, echo = TRUE, eval=TRUE}
 a <- 2
 ```
 
-above, you assigned the value of `2` into the variable `a`. Now, if you want to operate on the variable `a`, you can do so. The following code multiplies whatever value(s) are in the variable `a` by 10, and __assigns__ the resulting value to a variable called `b`. We can see the contents of a variable by typing its name alone on a line (and running it).
+above, you assigned the value of `2` into the variable `a`. Now, if you want to operate on the variable `a`, you can do so. The following code multiplies whatever value(s) are in the variable `a` by 10, and **assigns** the resulting value to a variable called `b`. We can see the contents of a variable by typing its name alone on a line (and running it).
 
 ```{r operators_on_vars, echo=TRUE, eval=TRUE}
 b <- a * 10
@@ -64,7 +61,7 @@ b
 
 ## Variables with multiple values (vectors)
 
-Variables can also contain a group of values called a __vector__. To make a vector, we use the 'combine' `c()` operator. Most operators (verbs) are followed by parentheses, and are called 'functions'. Inside the parentheses, we put variables or other information (collectively called __arguments__) that the function needs in order to do its job properly. The `c()` function **c**ombines all of its arguments. You can see the contents of a variable by typing it alone on a line (and running it).
+Variables can also contain a group of values called a **vector**. To make a vector, we use the 'combine' `c()` operator. Most operators (verbs) are followed by parentheses, and are called 'functions'. Inside the parentheses, we put variables or other information (collectively called **arguments**) that the function needs in order to do its job properly. The `c()` function **c**ombines all of its arguments. You can see the contents of a variable by typing it alone on a line (and running it).
 
 ```{r functions, echo=TRUE, eval=TRUE}
 my_variable <- c(a, b, 1, 2, 3)
@@ -95,7 +92,6 @@ data(mtcars)
 mtcars
 ```
 
-
 ```{r show_mtcars, echo=FALSE, eval=TRUE}
 # Don't touch this code chunk. It helps with the knitted document.
 head(mtcars)
@@ -103,7 +99,7 @@ head(mtcars)
 
 You can also see the dataset in the "Workspace and History" panel (top right panel) under 'Environment'. Try double-clicking the name of the dataset to see it in tabular form. You should see rows labeled for the type of car, and then characteristics of the car as a number of columns.
 
-You specify which column you want using the dollar sign (`$`). ![First rows of mtcars dataset](https://senanu.github.io/b40/assets/labs/02_cars.png) 
+You specify which column you want using the dollar sign (`$`). ![First rows of mtcars dataset](../pics/02_cars.png)
 
 We can use this dollar sign notation to isolate one column of data. For example, to calculate the mean (average) fuel economy for these cars, you can do:
 
@@ -116,10 +112,9 @@ mileage <- mtcars$mpg # Save the mpg data into a separate vector called 'mileage
 This simply means that you are choosing the `mpg` column of the variable '`mtcars`', and want to find out the mean value of that column. How would you get the average horsepower ('hp') for this dataset? Save it into a variable called 'average.horsepower'.
 
 ```{r hp, echo=TRUE, eval=TRUE,strip.white=FALSE}
-# What code would you use to get the mean horsepower?
+# What code would you use to get the mean (average) horsepower?
 
 ```
-
 
 ## Getting help
 
@@ -175,27 +170,27 @@ plot(random_nums, xlab='Number', ylab='Value of random number')
 
 ## A note on spelling and cases
 
-Since R is a computer program, it is vary finicky about spelling. If you spell something wrong, it won't know what you are talking about! For example, typing `mtcars$mbg` instead of `mtcars$mpg` will generate an error because there is no data column called `mbg` in the `mtcars` dataset.
+Since R is a computer program, it is very finicky about spelling. If you spell something wrong, it won't know what you are talking about! For example, typing `mtcars$mbg` instead of `mtcars$mpg` will generate an error because there is no data column called `mbg` in the `mtcars` dataset.
 
 Similarly, letters of different case are very different in R. For example, if you type `Mtcars` hoping to get the `mtcars` dataset, R will tell you that there is no such dataset.
 
-### __*Misspelling and mixing up cases is the single thing that trips up and causes frustration among Introductory Biology students! Be Warned!*__
+### ***Misspelling and mixing up cases is the single thing that trips up and causes frustration among Introductory Biology students! Be Warned!***
 
 # Getting your data into R
 
-R doesn't have a spreadsheet program built in, so we will use Google Sheets. Before doing this, however, we need to 'publish' our data as a CSV (Comma-separated values) file. __You will need to do this with each Google dataset that you use__. Start by logging in to your Google account and creating a file with a few values in 2 columns (this example is from my Google Drive):
+R doesn't have a spreadsheet program built in, so we will use Google Sheets. Before doing this, however, we need to 'publish' our data as a CSV (Comma-separated values) file. **You will need to do this with each Google dataset that you use**. Start by logging in to your Google account and creating a file with a few values in 2 columns (this example is from my Google Drive):
 
-![Google sheets file with 3 columns of data](https://senanu.github.io/b40/assets/labs/02_google_data.png){height=4in}
+![Google sheets file with 3 columns of data](../pics/02_google_data.png){height="4in"}
 
 Give your document a title, and make sure you know where it is in your Google Drive. Next, select the 'File' menu, then 'Share' and 'Publish to the web'. Then choose to **publish it as a CSV file**.
 
-![Publishing to the Web](https://senanu.github.io/b40/assets/labs/02_publish_to_web.png){height=4in}
+![Publishing to the Web](../pics/02_publish_to_web.png){height="4in"}
 
-![URL is in blue ready to copy/paste](https://senanu.github.io/b40/assets/labs/02_publish_to_web_URL.png){height=4in} -->
+![URL is in blue ready to copy/paste](../pics/02_publish_to_web_URL.png){height="4in"} --\>
 
 You should then copy the URL supplied, and paste it into your code. Probably the easiest function to use is '`read.csv()`' which will read that file and make it available for you to use in R. The code chunk below reads in the csv (using `read.csv()`) and then saves that table to an object called `dat`. As before, you can see what is in the table by simply putting the object name on its own line and running it.
 
-Notice in the `read.csv()` command below that the command has parentheses, and the information that goes within the parentheses is the URL given to you by Google. You need to put that entire URL into quotes ("").
+Notice in the `read.csv()` command below that the command has parentheses, and the information that goes within the parentheses is the URL given to you by Google. You need to put that entire URL into quotes (""). For example:
 
 ```{r read_table, echo=TRUE, eval=TRUE}
 # The read.csv() function is an easy way to get data into R. Simply paste
@@ -228,11 +223,11 @@ Things won't always work perfectly the first time you try them. Think of your co
 
 Consider the following recipe:
 
-1. Add dry ingredients to bowl
-1. Add wet ingredients to bowl
-1. Stir to make thick batter
-1. Place batter in 9x13in pan
-1. Place pan in oven for 35minutes at 350F
+1.  Add dry ingredients to bowl
+2.  Add wet ingredients to bowl
+3.  Stir to make thick batter
+4.  Place batter in 9x13in pan
+5.  Place pan in oven for 35minutes at 350F
 
 Imagine you forget to add the wet ingredients. If you haven't done the 2nd step successfully, you can't do the third step and successfully make a batter. The computer will give you an error that says that you can't make a batter with what is in the bowl. You therefore also can't do any of the later steps (such as putting a non-existent batter in the oven!).
 
@@ -259,15 +254,15 @@ Before you continue, knit this document to make sure everything above this point
 
 Demonstrate that you can read a file into R. I recommend using Google Sheets, as above, but you may also use another program such as Excel and save it as a .csv file. There are other ways, but for now, lets just keep it simple!
 
-1. Replace my name on line 3 with your name.
-1. Make a data file (I recommend Google Sheets).
-    * Make sure you have at least 2 columns and 10 rows of numeric data. Make up values.
-    * Name your columns **without using spaces** or other 'funny' characters. Capitals, underscores (_), and dots (.) can be used to make the column headers easier to read. But **don't use spaces!!!**
-    * Make sure there aren't letters in the columns (other than the first row). If there are, R will assume that the data are textual, rather than numeric, and it can't do mathematical operations on text.
-1. Write code in the empty code chunk below to read a data file (such as Google sheets).
-    * Save the data into a variable called "mydata" using the assignment operator ("<-")
-    * Remember that we learned the `read.csv()` command above.
-1. Make R print out the data by simply typing "mydata" alone on a line.
+1.  Replace my name on line 3 with your name.
+2.  Make a data file (I recommend Google Sheets).
+    -   Make sure you have at least 2 columns and 10 rows of numeric data. Make up values.
+    -   Name your columns **without using spaces** or other 'funny' characters. Capitals, underscores (\_), and dots (.) can be used to make the column headers easier to read. But **don't use spaces!!!**
+    -   Make sure there aren't letters in the columns (other than the first row). If there are, R will assume that the data are textual, rather than numeric, and it can't do mathematical operations on text.
+3.  Write code in the empty code chunk below to read a data file (such as Google sheets).
+    -   Save the data into a variable called "mydata" using the assignment operator ("\<-")
+    -   Remember that we learned the `read.csv()` command above.
+4.  Make R print out the data by simply typing "mydata" alone on a line.
 
 ```{r read_table2, echo=TRUE, eval=TRUE}
 # Put your code into this chunk to read a google sheets file using 'read.csv()'
@@ -278,17 +273,17 @@ Demonstrate that you can read a file into R. I recommend using Google Sheets, as
 
 The line of code in the next chunk will calculate summary statistics for your dataset. However, it can't do that until you have a dataset called "mydata", which you should have created above. In order to not have an error, I have put "eval=FALSE" in the top line of the code chunk. This prevents knitr from evaluating something that will cause an error. However, by the time **you** get here, you should have this data, so you can ask knitr to evaluate it by changing "eval=FALSE" to "eval=TRUE". This is a common thing you'll have to do frequently in these lab assignments.
 
-1. Change the "eval=FALSE" to "eval=TRUE" to allow knitr to have access to this code. You will need to look at the Rmd version of this document -- it won't show up in the knitted version.
+1.  Change the "eval=FALSE" to "eval=TRUE" to allow knitr to have access to this code. You will need to look at the Rmd version of this document -- it won't show up in the knitted version.
 
 ```{r summaryStats, echo=TRUE, eval=FALSE}
 summary(mydata)
 ```
 
-1. Use the `plot()` command to generate a simple graph of your data. I have put in the most important parts of the command, but you will need to fill it in depending on the names in your dataset. You can see in the comments what I used when I was using the leaf data from my own dataset. You should use the same method, but your names will be different.
-1. Note that you should have previously (in a step above) saved your data into a variable called "mydata".
-1. Put some text between the quotes to label the x-axis and the y-axis
-1. Put some text between the quotes to label the entire graph (main)
-1. Change the 'eval=FALSE' to 'eval=TRUE' so that this graph will be included in the knitted output.
+1.  Use the `plot()` command to generate a simple graph of your data. I have put in the most important parts of the command, but you will need to fill it in depending on the names in your dataset. You can see in the comments what I used when I was using the leaf data from my own dataset. You should use the same method, but your names will be different.
+2.  Note that you should have previously (in a step above) saved your data into a variable called "mydata".
+3.  Put some text between the quotes to label the x-axis and the y-axis
+4.  Put some text between the quotes to label the entire graph (main)
+5.  Change the 'eval=FALSE' to 'eval=TRUE' so that this graph will be included in the knitted output.
 
 ```{r myplot, include=TRUE, eval=FALSE}
 plot(x = mydata     ,     # dat$length
@@ -300,9 +295,9 @@ plot(x = mydata     ,     # dat$length
 
 # What to turn in
 
-1. Save your file. Please remember to do this periodically.
-1. Remember to clean your environment and clear the knitr cache. If you forgot how to do this, [look here](https://senanu.github.io/b40/docs/labs/R/intro_to_rstudio.html#what-to-turn-in). You don't need to do this every time you knit, just the last time as you prepare your html file to turn in.
-1. Knit the document to produce an html file.
-1. Check that the html file has **your** graph near the bottom.
-1. Save the html file.
-1. Turn in your html file on canvas. I will be looking to make sure that you completed the exercises section. Specifically, you **should have a simple graph using your own data.**
+1.  Save your file. Please remember to do this periodically.
+2.  Remember to clean your environment and clear the knitr cache. If you forgot how to do this, [look here](https://senanu.github.io/b40/docs/labs/R/intro_to_rstudio.html#what-to-turn-in). You don't need to do this every time you knit, just the last time as you prepare your html file to turn in.
+3.  Knit the document to produce an html file.
+4.  Check that the html file has **your** graph near the bottom.
+5.  Save the html file.
+6.  Turn in your html file on canvas. I will be looking to make sure that you completed the exercises section. Specifically, you **should have a simple graph using your own data.**
