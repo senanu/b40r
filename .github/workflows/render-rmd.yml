@@ -31,6 +31,7 @@ jobs:
       - name: Render all Rmd files to HTML
         run: |
           R -e 'rmds <- Sys.glob("R/*.Rmd"); print(rmds); if(length(rmds) == 0) { message("No Rmd files found") } else { for (f in rmds) rmarkdown::render(f, output_format = "html_document", quiet = TRUE) }'
+          mv R/*.html sample_html/
 
       - name: Commit HTML files
 #        env:
@@ -38,7 +39,7 @@ jobs:
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add R/*.html
+          git add sample_html/*.html
           git commit -m "Automatic rebuild of HTML files" || echo "No changes to commit"
           git push origin || echo "No changes to commit and push"
 
