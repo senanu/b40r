@@ -14,6 +14,6 @@ The Rmd files are within the "R" directory. Knitted html files are provided in t
 
 ## Knitted files for reference only:
 
-1. [intro to RStudio](https://htmlpreview.github.io/https://github.com/senanu/b40r/sample_html/intro_to_rstudio.html)
-1. [intro to R](https://htmlpreview.github.io/https://github.com/senanu/b40r/sample_html/intro_to_r.html)
+1. [intro to RStudio](http://htmlpreview.github.com/?https://github.com/senanu/b40r/sample_html/intro_to_rstudio.html)
+1. [intro to R](http://htmlpreview.github.com/?https://github.com/senanu/b40r/sample_html/intro_to_r.html)
 
