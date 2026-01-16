@@ -14,19 +14,19 @@ knitr::opts_knit$set(global.device = TRUE, echo=TRUE) # leave this alone
 
 ## Before you get started with your data analysis
 
-1. Before you change anything, please `knit` this document to make sure it works properly. It has been tested and should work, but please make sure.
-2. Change the author at the top of the file to your name.
+1.  Before you change anything, please `knit` this document to make sure it works properly. It has been tested and should work, but please make sure.
+2.  Change the author at the top of the file to your name.
 
 ## Data analysis for Part 2: Effects of pH on amylase activity
 
 In part 2 of this project, you assayed how long it takes for amylase to hydrolyse a certain amount of starch at different pH.
 
-1. Make a Google spreadsheet of your data. Label your columns with something that will be easy for R to deal with (ie. don't use spaces or 'odd' characters).
-1. Import the data into a data frame called `pH.dat`.
-1. Plot a graph showing how the pH affects the reaction velocity. Think about which are your independent (x) and dependent (y) variables. When you use the `plot()` command, you can either say `plot(dat$x, dat$y)` where `x` and `y` are your variables, or you can say `plot(x=dat$x, y=dat$y)` to explicitly say which variable should go on which axis. In the first form, the computer knows which is which because it expects the first to be the x variable and the second to be the y variable, so you have to make sure you keep it straight. It is usually better to use the second form because it is very explicit and you are less likely to mess up!
-1. Add axis labels (`xlab="myXLabel", ylab=myYLabel"`) and a title (`main="myTitle"`). These are all arguments to the `plot()` command.
-1. Connect the points using `type='b'`. Again, this is an argument to the `plot()` command and tells R to use **b**oth lines and points. You could use `type='l'` (the letter 'ell') for **l**ines and `type='p'` for **p**oints.
-1. Change `eval=FALSE` to `eval=TRUE`
+1.  Make a Google spreadsheet of your data. Label your columns with something that will be easy for R to deal with (ie. don't use spaces or 'odd' characters).
+2.  Import the data into a data frame called `pH.dat`.
+3.  Plot a graph showing how the pH affects the reaction velocity. Think about which are your independent (x) and dependent (y) variables. When you use the `plot()` command, you can either say `plot(dat$x, dat$y)` where `x` and `y` are your variables, or you can say `plot(x=dat$x, y=dat$y)` to explicitly say which variable should go on which axis. In the first form, the computer knows which is which because it expects the first to be the x variable and the second to be the y variable, so you have to make sure you keep it straight. It is usually better to use the second form because it is very explicit and you are less likely to mess up!
+4.  Add axis labels (`xlab="myXLabel", ylab=myYLabel"`) and a title (`main="myTitle"`). These are all arguments to the `plot()` command.
+5.  Connect the points using `type='b'`. Again, this is an argument to the `plot()` command and tells R to use **b**oth lines and points. You could use `type='l'` (the letter 'ell') for **l**ines and `type='p'` for **p**oints.
+6.  Change `eval=FALSE` to `eval=TRUE`
 
 ```{r ph-data-import, eval=FALSE, include=TRUE, echo=TRUE}
 pH.dat <-
@@ -37,9 +37,9 @@ plot()
 
 In this section, we will measure how fast the reaction goes according to the concentration of the substrate (starch).
 
-1. Put your data into a Google table as shown in step 8 of the lab manual. Note that the 'S' is uppercase and the 'v' is lowercase. We use this to maintain the conventions of a well-established mathematical formula.
-1. Get your data into R and call it `dat`.
-1. Change the `eval=FALSE` to `eval=TRUE`.
+1.  Put your data into a Google table as shown in step 8 of the lab manual. Note that the 'S' is uppercase and the 'v' is lowercase. We use this to maintain the conventions of a well-established mathematical formula.
+2.  Get your data into R and call it `dat`.
+3.  Change the `eval=FALSE` to `eval=TRUE`.
 
 ```{r mm-data-import, eval=FALSE, include=TRUE, echo=TRUE}
 dat <-
@@ -68,8 +68,8 @@ rm(vmax, S, Km, v) # remove variables so they don't interfere below; Don't touch
 
 We now want to fit this type of Michaelis-Menten graph to your own data.
 
-1. Run the code below. You __shouldn't__ need to change anything. However, this depends on you having the data table in **exactly** the form given in the lab manual.
-1. Change the `eval=FALSE` to `eval=TRUE`.
+1.  Run the code below. You **shouldn't** need to change anything. However, this depends on you having the data table in **exactly** the form given in the lab manual.
+2.  Change the `eval=FALSE` to `eval=TRUE`.
 
 ```{r fit-data, eval=FALSE, include=TRUE, echo=TRUE}
 MMcurve <- formula(v~(Vmax*S)/(Km+S))
@@ -80,10 +80,10 @@ theorLine <- predict(bestfit, list(S=SconcRange))
 bestFitVals <- coef(bestfit)
 ```
 
-1. Plot your data using only small modifications to the `plot()` command below. **You will need to add axis labels and a main title.** To do so, you can add the arguments `xlab="my x-axis label"` and `main="Plot title"`. As before, these get added to the `plot()` command, and are separated by commas.
-1. In some cases, you may need to adjust the `xlim=c(min, max)` and `ylim=c(min, max)` commands. These give the minimum and maximum extent of the plot, and may not work for your data. If you can't figure out how to do this, ask.
-1. Use the last line of this code chunk to get the fitted values for the Michaelis-Menten equation.
-1. Make sure the code works, then change `eval=FALSE` to `eval=TRUE`.
+1.  Plot your data using only small modifications to the `plot()` command below. **You will need to add axis labels and a main title.** To do so, you can add the arguments `xlab="my x-axis label"` and `main="Plot title"`. As before, these get added to the `plot()` command, and are separated by commas.
+2.  In some cases, you may need to adjust the `xlim=c(min, max)` and `ylim=c(min, max)` commands. These give the minimum and maximum extent of the plot, and may not work for your data. If you can't figure out how to do this, ask.
+3.  Use the last line of this code chunk to get the fitted values for the Michaelis-Menten equation.
+4.  Make sure the code works, then change `eval=FALSE` to `eval=TRUE`.
 
 ```{r dat-graph, eval=FALSE, include=TRUE, echo=TRUE}
 plot(dat$S,
@@ -99,4 +99,4 @@ abline(h=bestFitVals[[1]], col='red')
 bestFitVals
 ```
 
- (some of this R code has been modified from http://rforbiochemists.blogspot.com/2015/05/plotting-and-fitting-enzymology-data.html)
+(some of this R code has been modified from <http://rforbiochemists.blogspot.com/2015/05/plotting-and-fitting-enzymology-data.html>)

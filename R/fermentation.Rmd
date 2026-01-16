@@ -39,7 +39,6 @@ library(ggplot2)
 
 You will enter your data into a Google spreadsheet in a 'long' format. In 'long' format, each observation is on its own line, with one or more columns to distinguish between them. You can enter your data [here](https://docs.google.com/spreadsheets/d/177h0MpQbMzauvFr5LsnM34zpAl6v0ya9VENEk62N3r4/edit?usp=sharing). Each lab group should enter their data in a different portion of the spreadsheet, and we will use the whole class' data for our analysis.
 
-
 ```{r get-data, eval=TRUE, echo=FALSE}
 ## Use the top row here to use some made-up data.
 ## Use the bottom row for your own real data.
@@ -108,8 +107,7 @@ salt.regression <- lm(co2 ~ time, data=salt)
 salt.regression
 ```
 
-Remember that this uses the formula for a straight line $$Y = mX + b$$ where $Y$ is CO~2~ and $X$ is Time. $m$ is therefore the slope and $b$ is the intercept. So we could write this as
-$$ Y=`r round(salt.regression$coefficients[2],4)`X + `r round(salt.regression$coefficients[1],4)`$$
+Remember that this uses the formula for a straight line $$Y = mX + b$$ where $Y$ is CO~2~ and $X$ is Time. $m$ is therefore the slope and $b$ is the intercept. So we could write this as $$ Y=`r round(salt.regression$coefficients[2],4)`X + `r round(salt.regression$coefficients[1],4)`$$
 
 Let's use the `summary()` function to get more information about this linear regression:
 
@@ -137,7 +135,9 @@ summary(water.reg)
 
 Is the p-value less than 0.05? If so, that tells us that there is a relationship between time and CO~2~. Given that this is your negative control, did you expect there to be a relationship? Why or why not?
 
-    Type your answer here. If you use 4 spaces at the beginning, it'll format nicely.
+```         
+Type your answer here. If you use 4 spaces at the beginning, it'll format nicely.
+```
 
 OK, now lets look to see whether the slopes of the lines are different from each other. We need to use a more complex model here (don't worry about details). Let's specifically compare the slopes for glucose and sucrose:
 
@@ -153,10 +153,14 @@ For this exercise, we can focus in on the time:carb1 row and look at the p-value
 
 What do your data show? Is the p-value in the last row of the Coefficients table less than 0.05 $(p<0.05)$?
 
-    Type your answer here. If you use 4 spaces at the beginning, it'll format nicely.
+```         
+Type your answer here. If you use 4 spaces at the beginning, it'll format nicely.
+```
 
 Although we won't individually test each of the lines, they almost certainly have different slopes. What does this tell you about the different enzymes that yeast has to break down these different molecules?
 
-    Type your answer here. If you use 4 spaces at the beginning, it'll format nicely.
+```         
+Type your answer here. If you use 4 spaces at the beginning, it'll format nicely.
+```
 
 Once you have answered the questions in this section, change the name at the top of this document to your own, knit it to html, and turn it in on Canvas.
