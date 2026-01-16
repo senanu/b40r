@@ -4,6 +4,8 @@
 
 [![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/senanu/b40r/master?urlpath=rstudio)
 
+Note that if you use this link to start RStudio, you will NOT be able to save your work. You should use [Posit Cloud](https://posit.cloud/login) instead.
+
 <!-- badges: end -->
 
 # R Markdown files for Bio40
