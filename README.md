@@ -16,13 +16,11 @@ The Rmd files are within the "R" directory. Knitted html files are provided in t
 
 ## Knitted files for reference only:
 
-1. [intro to RStudio](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/intro_to_rstudio.html)
-1. [intro to R](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/intro_to_r.html)
-1. [Protein lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/protein.html)
-1. [Diffusion lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/diffusion.html)
-1. [Enzymes lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/enzymes.html)
-1. [Respiration lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/Respiration.html)
-1. [Fermentation lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/fermentation.html)
-1. [Photosynthesis lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/photosynthesis.html)
-
-
+1.  [intro to RStudio](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/intro_to_rstudio.html)
+2.  [intro to R](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/intro_to_r.html)
+3.  [Protein lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/protein.html)
+4.  [Diffusion lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/diffusion.html)
+5.  [Enzymes lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/enzymes.html)
+6.  [Respiration lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/Respiration.html)
+7.  [Fermentation lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/fermentation.html)
+8.  [Photosynthesis lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/photosynthesis.html)
