@@ -21,6 +21,6 @@ The Rmd files are within the "R" directory. Knitted html files are provided in t
 1. [Enzymes lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/enzymes.html)
 1. [Respiration lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/Respiration.html)
 1. [Fermentation lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/fermentation.html)
-1. [Photosynthesis lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/photosynthesi.html)
+1. [Photosynthesis lab](https://htmlpreview.github.io/?https://github.com/senanu/b40r/blob/master/sample_html/photosynthesis.html)
 
 
