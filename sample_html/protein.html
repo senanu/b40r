@@ -11,7 +11,7 @@
 
 <meta name="author" content="Senanu Spring-Pearson" />
 
-<meta name="date" content="2026-01-16" />
+<meta name="date" content="2026-01-26" />
 
 <title>Qualitative analysis of Protein</title>
 
@@ -352,22 +352,31 @@ display: none;
 
 <h1 class="title toc-ignore">Qualitative analysis of Protein</h1>
 <h4 class="author">Senanu Spring-Pearson</h4>
-<h4 class="date">2026-01-16</h4>
+<h4 class="date">2026-01-26</h4>
 
 </div>
 
 
-<p>Before starting, go to the tools menu, choose ‘Global options’, then
-in the ‘R markdown’ menu, UNCHECK the box labeled “Show output inline
-for all R Markdown documents”. This will tell RStudio to put the plot
-into the viewer sub-window.</p>
+<div id="preliminary" class="section level1">
+<h1>Preliminary</h1>
+<p>I strongly recommend that you read this file using the “Visual”
+rather than “Source” mode. However, if you need to send me (if you get
+stuck), you’ll need to switch back to “Source” before
+copy-and-pasteing.</p>
+<p>Before starting this lab, do a ‘git pull’ by clicking the blue down
+arrow in the git tab of the top-right pane. <strong>This is important!
+Do it now!</strong> This will download the latest version of the code,
+including this file. See <a href="https://senanu.github.io/b40/docs/labs/R/r_faq.html#before-each-lab">the
+Git section of the FAQ here</a>.</p>
+</div>
 <div id="importing-data" class="section level1">
 <h1>Importing data</h1>
 <p>Get your data for the standard curve into R using a Google Sheets
 spreadsheet or any other method that you prefer. You’ll need to
 <strong>remember how to save your data from Google as a .csv
 file</strong>. You can use the <code>read.csv()</code> function to get
-it into R.</p>
+it into R. You can find a <a href="https://senanu.github.io/b40/docs/labs/R/r_faq.html#why-cant-r-read-my-google-data-file">reminder
+here.</a></p>
 <div id="formatting-your-data-in-a-spreadsheet" class="section level2">
 <h2>Formatting your data in a spreadsheet</h2>
 <p>Your data sheet should have 1 row of headers with any data below
@@ -383,8 +392,9 @@ headings. Headings such as “Wavelength (nm)” will give you problems!</p>
 alongside the data. Any ‘text characters’ will cause R to interpret the
 data as text, rather than numbers, and you can’t add text together in
 the same way you do with numbers.</p>
-<p>Note that you ONLY need the data for the standard curve. Don’t
-include any of the milk data in your Google spreadsheet.</p>
+<p><strong>Note that you ONLY need the data for the standard curve.
+Don’t include any of the milk data in your Google
+spreadsheet.</strong></p>
 <ol style="list-style-type: decimal">
 <li>Save your data in a Google spreadsheet.</li>
 <li>Have R read in the data and save it in a variable called
@@ -394,8 +404,9 @@ include any of the milk data in your Google spreadsheet.</p>
 be numeric are labeled either as ‘int’ (integers) or ‘num’ (numeric).
 Note what R calls your variables – you’ll need this information for
 plotting the curve below.</li>
-<li>Change the <code>eval=FALSE</code> to <code>eval=TRUE</code> once
-your code runs. This is necessary to knit properly.</li>
+<li>Change the <code>eval=FALSE</code> to <code>eval=TRUE</code> on the
+top line of the following code chunk once your code runs. This is
+necessary to knit properly.</li>
 </ol>
 <pre class="r"><code>knitr::opts_knit$set(global.device = TRUE)
 # Do the steps above on the lines below this one.
@@ -466,6 +477,8 @@ so that they are easy to read.</li>
 <li>Make sure there is a comma between each argument. In the code above,
 this means that there should be a comma at the end of each line, since
 each argument takes up a line.</li>
+<li>RStudio will automatically indent for you. This also makes it easier
+to read and figure out where a command (verb) starts and ends.</li>
 <li>The values for main, xlab, and ylab should be in quotes, since you
 are just asking R to print some text on the graph.</li>
 </ol></li>
@@ -499,10 +512,10 @@ in the ‘Console’ (bottom left corner of the RStudio window) For
 example:</p>
 <pre><code>## 
 ## Call:
-## lm(formula = professors_data$y ~ professors_data$x)
+## lm(formula = professors.data$y ~ professors.data$x)
 ## 
 ## Coefficients:
-##       (Intercept)  professors_data$x  
+##       (Intercept)  professors.data$x  
 ##           -0.1688             0.5547</code></pre>
 <p>You can see the two coefficients:</p>
 <ul>
@@ -573,6 +586,11 @@ you can use an entire variable as the argument to the
 the final result by 50 because of the initial dilution that you
 made</strong>. The function to multiply is the asterisk (*) as in “5 *
 3”.</li>
+<li>You can do several operations in one line. For example, taking the
+median of a set of values (from the <code>mtcars</code> dataset that we
+used previously) and then multiplying it by 10 and saving it into
+“median.value” might look like:
+<code>median.value &lt;- median(mtcars$mpg) * 10</code></li>
 <li>If the code runs without errors, change the <code>eval=FALSE</code>
 to <code>eval=TRUE</code>.</li>
 </ol>
@@ -629,13 +647,13 @@ Check your data in the “Calculate Protein Concentration” section above
 to see if this applies to your graph. If this is the case, go back to
 the beginning of this <code>Rmd</code> file to the section (Plot a
 standard curve) where you initially plotted the graph. Change limits on
-the x-axis by changing the <code>xlim = c(0,2)</code> so that the
-<code>2</code> is large enough to accommodate your largest x-value.
-Similarly, change <code>ylim = c(0,1)</code> so that the <code>1</code>
-is large enough for your largest y-value. After you make these changes,
-run <u>all</u> the subsequent code so that your changes take effect on
-what you did later. Check again that all 10 dots are accounted
-for.</p></li>
+the x-axis by changing the <code>xlim = c(0,2)</code> so that the second
+value (<code>2</code> here) is large enough to accommodate your largest
+x-value. Similarly, change <code>ylim = c(0,1)</code> so that the second
+value (<code>1</code> here) is large enough for your largest y-value.
+After you make these changes, run <u>all</u> the subsequent code so that
+your changes take effect on what you did later. Check again that all 10
+dots are accounted for.</p></li>
 </ul></li>
 <li><p>If your colored dots are not on the regression line, it is likely
 due to 1 of 2 reasons:</p>
@@ -666,10 +684,11 @@ very beginning of this document.</li>
 concentration that you calculated for the whole and skim milk. This
 should be the value after multiplying by 50 to account for the
 dilution.</li>
+<li>Replace my name with your name at the top of this document.</li>
 <li>Recompile this document by clicking <code>Knit</code> then
 <code>Knit to html</code>. Save a copy of the resulting HTML file on
-your computer. You won’t be turning this in, but it may be useful to
-refer to.</li>
+your computer. You will turn in a copy of this file like you have done
+in the Intro_to_r and Intro_to_RStudio labs.</li>
 </ol>
 </div>
 
