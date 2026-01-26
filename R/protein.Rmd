@@ -5,11 +5,15 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-Before starting, go to the tools menu, choose 'Global options', then in the 'R markdown' menu, UNCHECK the box labeled "Show output inline for all R Markdown documents". This will tell RStudio to put the plot into the viewer sub-window.
+# Preliminary
+
+Before starting this lab, do a 'git pull' by clicking the blue down arrow in the git tab of the top-right pane. **This is important! Do it now!** This will download the latest version of the code, including this file. See [the Git section of the FAQ here](https://senanu.github.io/b40/docs/labs/R/r_faq.html#before-each-lab).
+
+I strongly recommend that you read this file using the "Visual" rather than "Source" mode. However, if you need to send me (if you get stuck), you'll need to switch back to "Source" before copy-and-pasteing.
 
 # Importing data
 
-Get your data for the standard curve into R using a Google Sheets spreadsheet or any other method that you prefer. You'll need to **remember how to save your data from Google as a .csv file**. You can use the `read.csv()` function to get it into R.
+Get your data for the standard curve into R using a Google Sheets spreadsheet or any other method that you prefer. You'll need to **remember how to save your data from Google as a .csv file**. You can use the `read.csv()` function to get it into R. You can find a [reminder here.](https://senanu.github.io/b40/docs/labs/R/r_faq.html#why-cant-r-read-my-google-data-file)
 
 ## Formatting your data in a spreadsheet
 
@@ -17,12 +21,12 @@ Your data sheet should have 1 row of headers with any data below those headers. 
 
 Make sure your data columns that should contain numeric values *only* contain numeric values throughout the entire column (except for the header row). In particular, don't include the units alongside the data. Any 'text characters' will cause R to interpret the data as text, rather than numbers, and you can't add text together in the same way you do with numbers.
 
-Note that you ONLY need the data for the standard curve. Don't include any of the milk data in your Google spreadsheet.
+**Note that you ONLY need the data for the standard curve. Don't include any of the milk data in your Google spreadsheet.**
 
 1.  Save your data in a Google spreadsheet.
 2.  Have R read in the data and save it in a variable called `dat`.
 3.  Check that your data was read in correctly using the structure (`str(dat)`) function. Check that the variables that should be numeric are labeled either as 'int' (integers) or 'num' (numeric). Note what R calls your variables -- you'll need this information for plotting the curve below.
-4.  Change the `eval=FALSE` to `eval=TRUE` once your code runs. This is necessary to knit properly.
+4.  Change the `eval=FALSE` to `eval=TRUE` on the top line of the following code chunk once your code runs. This is necessary to knit properly.
 
 ```{r data-import, include=TRUE, echo=TRUE, eval=FALSE}
 knitr::opts_knit$set(global.device = TRUE)
@@ -59,7 +63,8 @@ recordedPlot <- recordPlot() # Don't touch this line
     1.  In the following, `dat` refers to the data table that you saved in the code chunk above, and `x.data.series` and `y.data.series` refer to the column names. Change them as appropriate for your data.
     2.  The above command is written on multiple lines. R will interpret it as one command because the command doesn't end until the parentheses are closed. It is useful to break up functions with many arguments like this so that they are easy to read.
     3.  Make sure there is a comma between each argument. In the code above, this means that there should be a comma at the end of each line, since each argument takes up a line.
-    4.  The values for main, xlab, and ylab should be in quotes, since you are just asking R to print some text on the graph.
+    4.  RStudio will automatically indent for you. This also makes it easier to read and figure out where a command (verb) starts and ends.
+    5.  The values for main, xlab, and ylab should be in quotes, since you are just asking R to print some text on the graph.
 
 # Calculate a linear regression
 
@@ -77,12 +82,12 @@ lin.regression <- lm(dat$y.data.series ~ dat$x.data.series)
 Remember from math class that a straight line has a formula of $$Y = mX + b$$ Where 'm' is the slope and 'b' is the intercept (this is how I learned the equation -- you might have used different letters -- it's a regional thing!). You can get those values by simply typing `lin.regression` on a line of its own in the 'Console' (bottom left corner of the RStudio window) For example:
 
 ```{r summary-regression-prof, echo=FALSE, eval=TRUE, include=TRUE}
-## Don't do anything with this code chunk.
+## Don't do anything with any part of this code chunk.
 # Make up some data
 set.seed(1)
-professors_data <- data.frame(x=1:10, y=rnorm(10) + (1:10)/2)
+professors.data <- data.frame(x=1:10, y=rnorm(10) + (1:10)/2)
 # Do a regression analysis and save it in an object called 'profs.regression'
-profs.regression <- lm(professors_data$y ~ professors_data$x)
+profs.regression <- lm(professors.data$y ~ professors.data$x)
 # Display the coefficients
 profs.regression
 ```
@@ -137,7 +142,8 @@ You will need to figure out how to do the following simple steps yourself. Feel 
 
 1.  Use the `mean()` function to calculate the average protein concentrations in both the skim and whole milk. Remember that you can use an entire variable as the argument to the `mean()` function.
 2.  As with the plot you made by hand, **you will need to multiply the final result by 50 because of the initial dilution that you made**. The function to multiply is the asterisk (\*) as in "5 \* 3".
-3.  If the code runs without errors, change the `eval=FALSE` to `eval=TRUE`.
+3.  You can do several operations in one line. For example, taking the median of a set of values (from the `mtcars` dataset that we used previously) and then multiplying it by 10 and saving it into "median.value" might look like: `median.value <- median(mtcars$mpg) * 10`
+4.  If the code runs without errors, change the `eval=FALSE` to `eval=TRUE`.
 
 ```{r milk-averages, echo=TRUE, include=TRUE, eval=FALSE}
 average.whole <-
@@ -181,7 +187,7 @@ points(x=whole.conc, y=whole.abs, col='red', pch=16)
 
     -   Some of your dots are overlapping. All dots are on the graph, but there are some you cannot see because they are underneath others.
 
-    -   Some of the dots don't fit within the boundaries of the graph. Check your data in the "Calculate Protein Concentration" section above to see if this applies to your graph. If this is the case, go back to the beginning of this `Rmd` file to the section (Plot a standard curve) where you initially plotted the graph. Change limits on the x-axis by changing the `xlim = c(0,2)` so that the `2` is large enough to accommodate your largest x-value. Similarly, change `ylim = c(0,1)` so that the `1` is large enough for your largest y-value. After you make these changes, run [all]{.underline} the subsequent code so that your changes take effect on what you did later. Check again that all 10 dots are accounted for.
+    -   Some of the dots don't fit within the boundaries of the graph. Check your data in the "Calculate Protein Concentration" section above to see if this applies to your graph. If this is the case, go back to the beginning of this `Rmd` file to the section (Plot a standard curve) where you initially plotted the graph. Change limits on the x-axis by changing the `xlim = c(0,2)` so that the second value (`2` here) is large enough to accommodate your largest x-value. Similarly, change `ylim = c(0,1)` so that the second value (`1` here) is large enough for your largest y-value. After you make these changes, run [all]{.underline} the subsequent code so that your changes take effect on what you did later. Check again that all 10 dots are accounted for.
 
 -   If your colored dots are not on the regression line, it is likely due to 1 of 2 reasons:
 
@@ -193,4 +199,5 @@ points(x=whole.conc, y=whole.abs, col='red', pch=16)
 
 1.  Copy and paste the graph into your lab report which you will turn in. Go to the lower right pane and click `Export` and then `Copy to Clipboard`. Then paste it into your lab report. If you don't have a graph, you may need to follow the instructions at the very beginning of this document.
 2.  In your lab report, make sure you include the average protein concentration that you calculated for the whole and skim milk. This should be the value after multiplying by 50 to account for the dilution.
-3.  Recompile this document by clicking `Knit` then `Knit to html`. Save a copy of the resulting HTML file on your computer. You won't be turning this in, but it may be useful to refer to.
+3.  Replace my name with your name at the top of this document.
+4.  Recompile this document by clicking `Knit` then `Knit to html`. Save a copy of the resulting HTML file on your computer. You will turn in a copy of this file like you have done in the Intro_to_r and Intro_to_RStudio labs.
