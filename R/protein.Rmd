@@ -7,9 +7,9 @@ output: html_document
 
 # Preliminary
 
-Before starting this lab, do a 'git pull' by clicking the blue down arrow in the git tab of the top-right pane. **This is important! Do it now!** This will download the latest version of the code, including this file. See [the Git section of the FAQ here](https://senanu.github.io/b40/docs/labs/R/r_faq.html#before-each-lab).
-
 I strongly recommend that you read this file using the "Visual" rather than "Source" mode. However, if you need to send me (if you get stuck), you'll need to switch back to "Source" before copy-and-pasteing.
+
+Before starting this lab, do a 'git pull' by clicking the blue down arrow in the git tab of the top-right pane. **This is important! Do it now!** This will download the latest version of the code, including this file. See [the Git section of the FAQ here](https://senanu.github.io/b40/docs/labs/R/r_faq.html#before-each-lab).
 
 # Importing data
 
