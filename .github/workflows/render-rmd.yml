@@ -31,6 +31,7 @@ jobs:
       - name: Render all Rmd files to HTML
         run: |
           R -e 'rmds <- Sys.glob("R/*.Rmd"); print(rmds); if(length(rmds) == 0) { message("No Rmd files found") } else { for (f in rmds) rmarkdown::render(f, output_format = "html_document", quiet = TRUE) }'
+          R -e 'rmds <- Sys.glob("R/PTC.Rmd"); print(rmds); if(length(rmds) == 0) { message("No Rmd files found") } else { for (f in rmds) rmarkdown::render(f, output_format = "material", quiet = TRUE) }'
           mv R/*.html sample_html/
 
       - name: Commit HTML files

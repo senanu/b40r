@@ -5,11 +5,11 @@ output:
   rmdformats::material:
     use_bookdown: true
     cards: false
+  bookdown::html_document2: null
   bookdown::pdf_document2: null
   rmdformats::readthedown:
     use_bookdown: true
   bookdown::gitbook: null
-  bookdown::html_document2: null
 ---
 
 ```{r setup, include=TRUE, echo=FALSE}
