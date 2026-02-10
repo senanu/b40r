@@ -11,7 +11,7 @@
 
 <meta name="author" content="Senanu Spring-Pearson" />
 
-<meta name="date" content="2026-01-27" />
+<meta name="date" content="2026-02-10" />
 
 <title>Diffusion Lab</title>
 
@@ -352,18 +352,16 @@ display: none;
 
 <h1 class="title toc-ignore">Diffusion Lab</h1>
 <h4 class="author">Senanu Spring-Pearson</h4>
-<h4 class="date">2026-01-27</h4>
+<h4 class="date">2026-02-10</h4>
 
 </div>
 
 
 <div id="as-you-begin" class="section level2">
 <h2>As you begin</h2>
-<p>You should load this .Rmd file into RStudio or RStudio.cloud. You may
-find it easier to read if you Knit it first rather than reading the .Rmd
-file itself. You should have learned how to do these in the <a href="https://senanu.github.io/b40/docs/labs/R/intro_to_rstudio.html">Intro_to_rstudio</a>
-and <a href="https://senanu.github.io/b40/docs/labs/R/intro_to_r.html">Intro_to_r</a>
-assignments.</p>
+<p>You should load this .Rmd file into RStudio or RStudio.cloud. You
+will almost certainly find it easier to read if you choose “Visual”
+rather than “Source” mode.</p>
 <p>If you are having trouble finding the output of your R commands (ie.
 when you click the green arrow to run a code chunk), this may help: go
 to the tools menu, choose ‘Global options’, then in the ‘R markdown’
@@ -422,11 +420,11 @@ potatoes that gained weight? Lost weight? It is important to do this
 type of mental calculation to make sure that your calculations are doing
 what you expect them to do. In fact, I recommend doing a single
 calculation by hand to make sure you got it right.</p>
-<p>Your percent change data is now stored as a ‘vector’ in R. However,
-it is often easier to ‘bind’ the column to the original table so that it
-is part of that table. This command combines ‘dat’ with ‘percent.change’
-into the variable ‘dat’. After doing this, you can refer to it as
-<code>dat$percent.change</code>.</p>
+<p>Your percent change data is now stored as a ‘vector’ in R (simply a
+sequence of numbers). However, it is often easier to ‘bind’ the column
+to the original table so that it is part of that table. This command
+combines ‘dat’ with ‘percent.change’ into the variable ‘dat’. After
+doing this, you can refer to it as <code>dat$percent.change</code>.</p>
 <ol style="list-style-type: decimal">
 <li>Once your code runs by pressing the green arrow on the top right,
 change the <code>eval=FALSE</code> to <code>eval=TRUE</code>.</li>
@@ -443,7 +441,8 @@ The tilde means “is explained by” so <code>lm(y ~ x)</code> means that
 the variable <code>y</code> is explained by <code>x</code>. In this
 case, we can read the tilde as part of a formula meaning “percent change
 is explained by the concentration of the solution”. <code>lm</code> is
-the command (‘verb’) to conduct a ‘linear model’ regression.</p>
+the command (‘verb’) to conduct a ‘linear model’ regression. Hopefully
+you recognize this from the protein lab.</p>
 <ol style="list-style-type: decimal">
 <li>Once your code runs by pressing the green arrow on the top right,
 change the <code>eval=FALSE</code> to <code>eval=TRUE</code>.</li>
