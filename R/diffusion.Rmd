@@ -7,7 +7,7 @@ output: html_document
 
 ## As you begin
 
-You should load this .Rmd file into RStudio or RStudio.cloud. You may find it easier to read if you Knit it first rather than reading the .Rmd file itself. You should have learned how to do these in the [Intro_to_rstudio](https://senanu.github.io/b40/docs/labs/R/intro_to_rstudio.html) and [Intro_to_r](https://senanu.github.io/b40/docs/labs/R/intro_to_r.html) assignments.
+You should load this .Rmd file into RStudio or RStudio.cloud. You will almost certainly find it easier to read if you choose "Visual" rather than "Source" mode.
 
 If you are having trouble finding the output of your R commands (ie. when you click the green arrow to run a code chunk), this may help: go to the tools menu, choose 'Global options', then in the 'R markdown' menu, UNCHECK the box labeled "Show output inline for all R Markdown documents". This will tell RStudio to put the plot into the viewer sub-window.
 
@@ -42,7 +42,7 @@ percent.change <-
 
 What do you think will be the sign (positive or negative) for potatoes that gained weight? Lost weight? It is important to do this type of mental calculation to make sure that your calculations are doing what you expect them to do. In fact, I recommend doing a single calculation by hand to make sure you got it right.
 
-Your percent change data is now stored as a 'vector' in R. However, it is often easier to 'bind' the column to the original table so that it is part of that table. This command combines 'dat' with 'percent.change' into the variable 'dat'. After doing this, you can refer to it as `dat$percent.change`.
+Your percent change data is now stored as a 'vector' in R (simply a sequence of numbers). However, it is often easier to 'bind' the column to the original table so that it is part of that table. This command combines 'dat' with 'percent.change' into the variable 'dat'. After doing this, you can refer to it as `dat$percent.change`.
 
 1.  Once your code runs by pressing the green arrow on the top right, change the `eval=FALSE` to `eval=TRUE`.
 
@@ -53,7 +53,7 @@ dat <- cbind(dat, percent.change)
 
 # Linear regression of data
 
-We can expect that the percent change will be approximately linear with the solution concentration. Therefore, we can do a linear regression. For this, we will use a special R formula using a tilde (\~). The tilde means "is explained by" so `lm(y ~ x)` means that the variable `y` is explained by `x`. In this case, we can read the tilde as part of a formula meaning "percent change is explained by the concentration of the solution". `lm` is the command ('verb') to conduct a 'linear model' regression.
+We can expect that the percent change will be approximately linear with the solution concentration. Therefore, we can do a linear regression. For this, we will use a special R formula using a tilde (\~). The tilde means "is explained by" so `lm(y ~ x)` means that the variable `y` is explained by `x`. In this case, we can read the tilde as part of a formula meaning "percent change is explained by the concentration of the solution". `lm` is the command ('verb') to conduct a 'linear model' regression. Hopefully you recognize this from the protein lab.
 
 1.  Once your code runs by pressing the green arrow on the top right, change the `eval=FALSE` to `eval=TRUE`.
 
