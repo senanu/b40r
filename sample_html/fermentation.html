@@ -11,7 +11,7 @@
 
 <meta name="author" content="Senanu Spring-Pearson" />
 
-<meta name="date" content="2026-02-10" />
+<meta name="date" content="2026-03-25" />
 
 <title>Fermentation Lab</title>
 
@@ -352,13 +352,14 @@ display: none;
 
 <h1 class="title toc-ignore">Fermentation Lab</h1>
 <h4 class="author">Senanu Spring-Pearson</h4>
-<h4 class="date">2026-02-10</h4>
+<h4 class="date">2026-03-25</h4>
 
 </div>
 
 
-<p>Note that you will <strong>not</strong> be able to knit this document
-yourself until there is data entered into the spreadsheet.</p>
+<p>Please make sure you do a ‘git pull’ before you work on this
+assignment. In the top right pane, click the “git” tab, then click the
+blue down arrow. This will give you the most up-to-date code.</p>
 <div id="purpose-and-getting-credit" class="section level2">
 <h2>Purpose, and getting credit</h2>
 <p>This is designed to be a very easy assignment but it deals with some
@@ -492,10 +493,9 @@ salt.regression</code></pre>
 ## Coefficients:
 ## (Intercept)         time  
 ##   -0.189953     0.003032</code></pre>
-<p>Remember that this uses the formula for a straight line <span class="math display">\[Y = mX + b\]</span> where <span class="math inline">\(Y\)</span> is CO<sub>2</sub> and <span class="math inline">\(X\)</span> is Time. <span class="math inline">\(m\)</span> is therefore the slope and <span class="math inline">\(b\)</span> is the intercept. So we could write
-this as <span class="math display">\[ Y=0.003X + -0.19\]</span></p>
-<p>Let’s use the <code>summary()</code> function to get more information
-about this linear regression:</p>
+<p>Remember that this uses the formula for a straight line <span class="math display">\[Y = mX + b\]</span> where <span class="math inline">\(Y\)</span> is CO<sub>2</sub> and <span class="math inline">\(X\)</span> is Time. <span class="math inline">\(m\)</span> is therefore the slope and <span class="math inline">\(b\)</span> is the intercept. Let’s use the
+<code>summary()</code> function to get more information about this
+linear regression:</p>
 <pre class="r"><code>summary(salt.regression)</code></pre>
 <pre><code>## 
 ## Call:
@@ -562,7 +562,7 @@ summary(water.reg)</code></pre>
 relationship between time and CO<sub>2</sub>. Given that this is your
 negative control, did you expect there to be a relationship? Why or why
 not?</p>
-<pre><code>Type your answer here. If you use 4 spaces at the beginning, it&#39;ll format nicely.</code></pre>
+<pre><code>Type your answer here. Make sure that it is within the 3 &#39;backticks&#39; so that it appears in a box in the HTML document after knitting. (Note that the backticks are only visible when you view the document in &quot;source&quot; mode. In &quot;visual&quot; mode, it should appear within a box.)</code></pre>
 <p>OK, now lets look to see whether the slopes of the lines are
 different from each other. We need to use a more complex model here
 (don’t worry about details). Let’s specifically compare the slopes for
@@ -592,12 +592,12 @@ the p-value. If that value is less than 0.05, then we can conclude that
 the slopes of the two lines are statistically different.</p>
 <p>What do your data show? Is the p-value in the last row of the
 Coefficients table less than 0.05 <span class="math inline">\((p&lt;0.05)\)</span>?</p>
-<pre><code>Type your answer here. If you use 4 spaces at the beginning, it&#39;ll format nicely.</code></pre>
+<pre><code>Type your answer here. Make sure that it is within the 3 &#39;backticks&#39; so that it appears in a box in the HTML document after knitting. (Note that the backticks are only visible when you view the document in &quot;source&quot; mode. In &quot;visual&quot; mode, it should appear within a box.)</code></pre>
 <p>Although we won’t individually test each of the lines, they almost
 certainly have different slopes. What does this tell you about the
 different enzymes that yeast has to break down these different
 molecules?</p>
-<pre><code>Type your answer here. If you use 4 spaces at the beginning, it&#39;ll format nicely.</code></pre>
+<pre><code>Type your answer here. Make sure that it is within the 3 &#39;backticks&#39; so that it appears in a box in the HTML document after knitting. (Note that the backticks are only visible when you view the document in &quot;source&quot; mode. In &quot;visual&quot; mode, it should appear within a box.)</code></pre>
 <p>Once you have answered the questions in this section, change the name
 at the top of this document to your own, knit it to html, and turn it in
 on Canvas.</p>
