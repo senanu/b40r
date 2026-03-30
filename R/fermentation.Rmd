@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE, cache=FALSE)
 
 Please make sure you do a 'git pull' before you work on this assignment. In the top right pane, click the "git" tab, then click the blue down arrow. This will give you the most up-to-date code.
 
+For this lab, I strongly recommend that you use the "Visual" mode rather than the "Source" mode to view this file.
+
 ## Purpose, and getting credit
 
 This is designed to be a very easy assignment but it deals with some complex (statistical) issues. Since this isn't a statistics course, my goal here is just to expose you to the idea of hypothesis testing (see below) which we'll revisit later in the course.
