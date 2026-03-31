@@ -33,7 +33,13 @@ For this part, you do not need to do any real data analysis.
 
 3.  What were the photosynthesis rates?
 
-    Control: Beaker 2: Beaker 3: Beaker 4:
+    Control: 
+    
+    Beaker 2: 
+    
+    Beaker 3: 
+    
+    Beaker 4:
 
 4.  Which had the fastest and slowest rates of photosynthesis?
 
