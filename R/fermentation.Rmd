@@ -47,8 +47,8 @@ You will enter your data into a Google spreadsheet in a 'long' format. In 'long'
 ## You can switch between them by adding or removing the 
 ## 'hashtags' that R uses to denote a comment. R will ignore
 ## a line that has a hashtag at the beginning.
-dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=1495812031&single=true&output=csv") # use this line for some fake data
-#dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=32807751&single=true&output=csv") # Use this line to grab the real class data once it has been input.
+#dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=1495812031&single=true&output=csv") # use this line for some fake data
+dat <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6FA2mzfFo3c-_yiyKuoqNf2UxssLel2pBM3tFoEbJWpola3DWbsq3uzsk3hlX7zIioG23JAJ31Smp/pub?gid=32807751&single=true&output=csv") # Use this line to grab the real class data once it has been input.
 ```
 
 ## Plot all data
@@ -59,7 +59,7 @@ We will start by simply plotting all the data, using a separate line for each ca
 ggplot2::ggplot(data = dat,
                 aes(x = time, y = co2vol, color = carb, group = carb)) +
   geom_point() +
-  geom_smooth(method=lm, se=TRUE) +
+  geom_smooth(method=lm, se=FALSE) +
   xlab("Time (minutes)") +
   ylab(expression(Volume~of~CO[2])) +
   labs(color = "Carbohydrate")
@@ -86,12 +86,13 @@ ggplot2::ggplot(data = salt,
   geom_smooth(method=lm, se=TRUE) +
   xlab("Time (minutes)") +
   ylab(expression(Volume~of~CO[2])) +
+  ggtitle("This graph uses fake data") +
   labs(color = "Carbohydrate")
 ```
 
 ## Is this line flat?
 
-The line above isn't quite level -- the slope doesn't seem to be quite 0. In statistics, we would state a "null hypothesis" (H~0~) that states that there is no relationship between time and the volume of CO~2~ produced. An alternate hypothesis (H~A~) would state that there is a relationship between the two:
+The line above (with fake data) isn't quite level -- the slope doesn't seem to be quite 0. In statistics, we would state a "null hypothesis" (H~0~) that states that there is no relationship between time and the volume of CO~2~ produced. An alternate hypothesis (H~A~) would state that there is a relationship between the two:
 
 ::: {#definition .definition style="color: black; background: silver;"}
 H~0~: There is **no** relationship between the two variables. The slope is **not** different from 0
@@ -138,6 +139,8 @@ water.reg <- lm(co2vol ~ time, data = water)
 summary(water.reg)
 ```
 
+### Question 1:
+
 Is the p-value less than 0.05? If so, that tells us that there is a relationship between time and CO~2~. Given that this is your negative control, did you expect there to be a relationship? Why or why not?
 
 ```         
@@ -156,13 +159,27 @@ summary(gluc.suc.regression)
 
 For this exercise, we can focus in on the time:carb1 row and look at the p-value. If that value is less than 0.05, then we can conclude that the slopes of the two lines are statistically different.
 
-What do your data show? Is the p-value in the last row of the Coefficients table less than 0.05 $(p<0.05)$?
+### Question 2:
+
+In the next bit of code, we'll compare glucose with starch. Look at the colorful graph above and make a prediction about whether you think there is a difference in slope between the glucose and starch lines.
+
+```{r gluc-starch-reg, echo=FALSE}
+gluc.starch <- dat[dat$carb == 'glucose' | dat$carb == 'starch',] # "|" means "or"
+gluc.starch$carb <- as.factor(gluc.starch$carb)
+contrasts(gluc.starch$carb) <- c(-0.5, 0.5) # see why this is necessary:  https://towardsdatascience.com/how-to-correctly-interpret-your-continuous-and-categorical-variable-interactions-in-regressions-51e5eed5de1e
+gluc.starch.regression <- lm(co2vol ~ time * carb, data = gluc.starch)
+summary(gluc.starch.regression)
+```
+
+What do your data show regarding the difference in fermentation between sucrose and starch? Is the p-value in the last row of the Coefficients table less than 0.05 $(p<0.05)$?
 
 ```         
 Type your answer here. Make sure that it is within the 3 'backticks' so that it appears in a box in the HTML document after knitting. (Note that the backticks are only visible when you view the document in "source" mode. In "visual" mode, it should appear within a box.)
 ```
 
-Although we won't individually test each of the lines, they almost certainly have different slopes. What does this tell you about the different enzymes that yeast has to break down these different molecules?
+### Question 3:
+
+What does this tell you about the different enzymes that yeast has to break down these different molecules?
 
 ```         
 Type your answer here. Make sure that it is within the 3 'backticks' so that it appears in a box in the HTML document after knitting. (Note that the backticks are only visible when you view the document in "source" mode. In "visual" mode, it should appear within a box.)
