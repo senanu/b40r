@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R"
+title: "Introduction to R Language"
 author: "Senanu Spring-Pearson"
 output: html_document
 date: "`r Sys.Date()`"
@@ -13,9 +13,15 @@ Learn to use the statistical computing language `R` in RStudio.
 
 Please read this document completely, and follow along in RStudio or Posit Cloud. There is a simple exercise that you must do and turn in located in the last section.
 
-As you have already learned in a previous exercise, this is an R Markdown document, which mixes text with code. To start out, you should 'knit' the document before making any changes. It will be easier to read, with nice formatting.
+As you have already learned in a previous exercise, this is an R Markdown document, which mixes text with code. To start out, you should 'knit' the document before making any changes. Please let me know if the file cannot be 'knitted' **before** any changes are made.
 
-You can read this document in 3 different ways, depending on how you like it. 1. View it as plain "Source" text. You will see all the formatting codes (which might be distracting and 'ugly' and numbering may seem wrong) but this is the rawest form, and how the document is actually written. Above and to the right of the code editor pane (top left pane), click the "source" button. 1. View it in the visual editor to make the formatting nice and avoid seeing all the formatting code. **This is how I recommend you read the document**. Click the "visual" button to the top left of the top left (code editor) pane. 1. Knit the document and read the HTML. This is the final form of the document but some things that you'll need get hidden in this form, so I don't recommend it. You can view it either in a separate window or in the "Plots and files" pane (lower right).
+You can read this document in 3 different ways, depending on how you like it.
+
+1.  View it as plain "Source" text. You will see all the formatting codes (which might be distracting and 'ugly' and numbering may seem wrong) but this is the rawest form, and how the document is actually written. Above and to the right of the code editor pane (top left pane), click the "source" button.
+
+2.  View it in the visual editor to make the formatting nice and avoid seeing all the formatting code. **This is how I recommend you read the document**. Click the "visual" button to the top left of the top left (code editor) pane.
+
+3.  Knit the document and read the HTML. This is the final form of the document but some things that you'll need get hidden in this form, so I don't recommend it. You can view it either in a separate window or in the "Plots and files" pane (lower right).
 
 Try viewing the document in each of these forms to see what you like.
 
@@ -37,10 +43,10 @@ If you want to run a single command without recording it into your script, you c
 
 You can do a lot with `R` but for now, we need to understand a few basics.
 
-Try to think of `R` like a language. In any language, there are **nouns** and **verbs**. Nouns can take the form of a single value such as the number `r 10`. We can use verbs to operate on those nouns, such as the plus sign in $10 + 5 = `r 10 + 5`$. Try typing '$10 + 5$' into the code chunk below. Run it. You should see that R returns the answer.
+Try to think of `R` like a language. In any language, there are **nouns** and **verbs**. Nouns can take the form of a single value such as the number $10$. We can use verbs to operate on those nouns, such as the plus sign in $10 + 5 = 15$. Try typing '$10 + 5$' into the code chunk below. Run it. You should see that R returns the answer.
 
 ```{r ten_plus_five, echo=TRUE, eval=TRUE}
-# Put your code (10 + 5) below this line. Don't include parentheses. Then, run the line with 'cntrl-enter' or by clicking the green arrow at the top right of this code chunk.
+# Put your code "10 + 5" below this line. Don't include quotations. Then, run the line with 'cntrl-enter' or by clicking the green arrow at the top right of this code chunk.
 
 ```
 
@@ -49,7 +55,7 @@ Try to think of `R` like a language. In any language, there are **nouns** and **
 In order to make R more than a glorified calculator, we will save values into named **variables**. To do so, we will use the **assignment operator (\<-)**. This operator (a verb) assigns the value on the right into the variable on the left. So, when you ran the command
 
 ```{r assigment, echo = TRUE, eval=TRUE}
-a <- 2
+a <- 2 # assign the value 2 into the variable 'a'
 ```
 
 above, you assigned the value of `2` into the variable `a`. Now, if you want to operate on the variable `a`, you can do so. The following code multiplies whatever value(s) are in the variable `a` by 10, and **assigns** the resulting value to a variable called `b`. We can see the contents of a variable by typing its name alone on a line (and running it).
@@ -104,9 +110,12 @@ You specify which column you want using the dollar sign (`$`). ![First rows of m
 We can use this dollar sign notation to isolate one column of data. For example, to calculate the mean (average) fuel economy for these cars, you can do:
 
 ```{r mpg, echo=TRUE, eval=TRUE}
-mtcars$mpg # show only the 'mpg' (miles per gallon) column
-mean(mtcars$mpg) # get the mean (average) mpg for this dataset
-mileage <- mtcars$mpg # Save the mpg data into a separate vector called 'mileage'.
+print("Show only the 'mpg' (miles per gallon) column:")
+mtcars$mpg 
+print("get the mean (average) mpg for this dataset:")
+mean(mtcars$mpg)
+print("Save the mpg data into a separate vector called 'mileage'")
+mileage <- mtcars$mpg
 ```
 
 This simply means that you are choosing the `mpg` column of the variable '`mtcars`', and want to find out the mean value of that column. How would you get the average horsepower ('hp') for this dataset? Save it into a variable called 'average.horsepower'.
@@ -256,12 +265,12 @@ Demonstrate that you can read a file into R. I recommend using Google Sheets, as
 
 1.  Replace my name on line 3 with your name.
 2.  Make a data file (I recommend Google Sheets).
-    -   Make sure you have at least 2 columns and 10 rows of numeric data. Make up values.
-    -   Name your columns **without using spaces** or other 'funny' characters. Capitals, underscores (\_), and dots (.) can be used to make the column headers easier to read. But **don't use spaces!!!**
-    -   Make sure there aren't letters in the columns (other than the first row). If there are, R will assume that the data are textual, rather than numeric, and it can't do mathematical operations on text.
+    - Make sure you have at least 2 columns and 10 rows of numeric data. Make up values.
+    - Name your columns **without using spaces** or other 'funny' characters. Capitals, underscores (\_), and dots (.) can be used to make the column headers easier to read. But **don't use spaces!!!**
+    - Make sure there aren't letters in the columns (other than the first row). If there are, R will assume that the data are textual, rather than numeric, and it can't do mathematical operations on text.
 3.  Write code in the empty code chunk below to read a data file (such as Google sheets).
-    -   Save the data into a variable called "mydata" using the assignment operator ("\<-")
-    -   Remember that we learned the `read.csv()` command above.
+    - Save the data into a variable called "mydata" using the assignment operator ("\<-")
+    - Remember that we learned the `read.csv()` command above.
 4.  Make R print out the data by simply typing "mydata" alone on a line.
 
 ```{r read_table2, echo=TRUE, eval=TRUE}
