@@ -27,4 +27,4 @@ plot(cars)
 
 ## Assignment
 
-This assignment is very simple. You just need to change the name on line 3 from my name to your own and then ‘knit’ this file according to the instructions in the lab manual.
+This assignment is very simple. You just need to change the name on line 3 from my name to your own and then ‘knit’ this file according to the instructions in the lab manual. You will produce an "html" document that you can turn in on Canvas.

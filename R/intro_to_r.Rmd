@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R Language"
+title: "Introduction to the R Language"
 author: "Senanu Spring-Pearson"
 output: html_document
 date: "`r Sys.Date()`"
@@ -67,7 +67,7 @@ b
 
 ## Variables with multiple values (vectors)
 
-Variables can also contain a group of values called a **vector**. To make a vector, we use the 'combine' `c()` operator. Most operators (verbs) are followed by parentheses, and are called 'functions'. Inside the parentheses, we put variables or other information (collectively called **arguments**) that the function needs in order to do its job properly. The `c()` function **c**ombines all of its arguments. You can see the contents of a variable by typing it alone on a line (and running it).
+Variables can also contain a group of values called a **vector**. To make a vector, we use the 'combine' `c()` operator. Most operators (verbs) are followed by parentheses, and are called 'functions'. Inside the parentheses, we put variables or other information (collectively called **arguments**) that the function needs in order to do its job properly. The `c()` function **c**ombines all of its arguments into a single vector. You can see the contents of a variable by typing it alone on a line (and running it).
 
 ```{r functions, echo=TRUE, eval=TRUE}
 my_variable <- c(a, b, 1, 2, 3)
@@ -109,7 +109,7 @@ You specify which column you want using the dollar sign (`$`). ![First rows of m
 
 We can use this dollar sign notation to isolate one column of data. For example, to calculate the mean (average) fuel economy for these cars, you can do:
 
-```{r mpg, echo=TRUE, eval=TRUE}
+```{r mpg, echo=FALSE, eval=TRUE}
 print("Show only the 'mpg' (miles per gallon) column:")
 mtcars$mpg 
 print("get the mean (average) mpg for this dataset:")
@@ -236,7 +236,7 @@ Consider the following recipe:
 2.  Add wet ingredients to bowl
 3.  Stir to make thick batter
 4.  Place batter in 9x13in pan
-5.  Place pan in oven for 35minutes at 350F
+5.  Place pan in oven for 35 minutes at 350F
 
 Imagine you forget to add the wet ingredients. If you haven't done the 2nd step successfully, you can't do the third step and successfully make a batter. The computer will give you an error that says that you can't make a batter with what is in the bowl. You therefore also can't do any of the later steps (such as putting a non-existent batter in the oven!).
 
@@ -280,7 +280,7 @@ Demonstrate that you can read a file into R. I recommend using Google Sheets, as
 
 ```
 
-The line of code in the next chunk will calculate summary statistics for your dataset. However, it can't do that until you have a dataset called "mydata", which you should have created above. In order to not have an error, I have put "eval=FALSE" in the top line of the code chunk. This prevents knitr from evaluating something that will cause an error. However, by the time **you** get here, you should have this data, so you can ask knitr to evaluate it by changing "eval=FALSE" to "eval=TRUE". This is a common thing you'll have to do frequently in these lab assignments.
+The line of code in the next chunk will calculate summary statistics for your dataset. However, it can't do that until you have a dataset called "mydata", which you should have created above. In order to not have an error, I have put "eval=FALSE" in the top line of the code chunk. This prevents knitr from evaluating something that will cause an error. However, by the time **you** get here, you should have this data, so you can ask knitr to evaluate it by changing "eval=FALSE" to "eval=TRUE". This is a common thing you'll have to do frequently in these lab assignments, and forgetting to do so is a common source of errors.
 
 1.  Change the "eval=FALSE" to "eval=TRUE" to allow knitr to have access to this code. You will need to look at the Rmd version of this document -- it won't show up in the knitted version.
 
